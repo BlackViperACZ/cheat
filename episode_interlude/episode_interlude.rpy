@@ -8,268 +8,259 @@ scene black
 stop music fadeout 3
 $ renpy.pause(2)
 
-label epi_intro_label:
-if (nonPatreonConfig or steamConfig) and renpy.loadable("walkthrough/season3/walkthrough_season3.rpyc"):
-    show screen keymap_screen_s3
-play music "music/ep_interlude/licensed_music/track108.mp3"
-$ renpy.sound.play("sound_effects/interlude/bike_skate.mp3", channel="sfx1", loop=True)
-scene anim_bike_intro_epi with dissolve
-pause
-scene epi_intro1 with dissolve
-zo "Faster!"
-scene epi_intro2 with dissolve
-mc "This is as fast as I can go!"
-zo "No, it's not!"
-mc "It is!"
-scene epi_intro3 with dissolve
+label epi_intro_label:  
+if (nonPatreonConfig or steamConfig) and renpy.loadable("walkthrough/season3/walkthrough_season3.rpyc"):  
+    show screen keymap_screen_s3  
+play music "music/ep_interlude/licensed_music/track108.mp3"  
+$ renpy.sound.play("sound_effects/interlude/bike_skate.mp3", channel="sfx1", loop=True)  
+scene anim_bike_intro_epi with dissolve  
+pause  
+scene epi_intro1 with dissolve  
+zo "Plus vite !"  
+scene epi_intro2 with dissolve  
+mc "C'est aussi vite que je peux aller !"  
+zo "Non, ce n'est pas vrai !"  
+mc "Si, ça l'est !"  
+scene epi_intro3 with dissolve  
 if persistent.mod_wt_enabled:  
-    $mod_choices = ["{size=44}(Zoey CHICK)","{size=44}(Zoey DIK)","","","","","","","","","","" ]
-call screen zoey_choice_screen("Encourage him \n[mod_gr][mod_choices[0]]",1000,100, "Such a girl! \n[mod_gr][mod_choices[1]]",1250,550)
-if tmp_choice == 1:
-    $ zdik(-1)
-    zo "I know you have it in you! You're faster than this!"
-    scene epi_intro4 with dissolve
-    mc "You want me to give it my all?"
-    scene epi_intro3 with dissolve
-    zo "Hell yeah! Faster!"
-else:
-    $ zdik(1)
-    zo "You pedal like a girl!"
-    scene epi_intro4 with dissolve
-    mc "Well, it's a girl's bike. Maybe that's why?"
-    scene epi_intro3 with dissolve
-    zo "Come on! Faster!"
-scene epi_intro5 with dissolve
-$ renpy.music.stop(channel="sfx1", fadeout=3)
-$ renpy.pause()
-scene epi_intro6 with dissolve
-$ renpy.pause()
-scene epi_intro7 with dissolve
-$ renpy.pause()
-scene anim_zoey_room_epi with dissolve
-pause
-scene epi_intro8 with dissolve
-$ renpy.pause()
-scene epi_intro9 with dissolve
-$ renpy.pause()
-scene epi_intro10 with dissolve
-zo "Not that one. Play the one from yesterday."
-scene epi_intro12 with dissolve
-mc "I don't remember exactly."
-scene epi_intro11 with dissolve
-zo "You do."
-scene epi_intro13 with dissolve
-mc "Haha, this again, dammit. Are you ever going to stop doing that?"
-scene epi_intro15 with dissolve
-zo "What of it?"
-scene epi_intro13 with dissolve
-mc "I don't remember what song you mean..."
-mc "...and when I say I don't know or remember something, you can't say \"You do\"."
-mc "Because I don't!"
-scene epi_intro16 with dissolve
-zo "Yeah, but you do."
-scene epi_intro14 with dissolve
-$ renpy.pause()
-scene epi_intro16 with dissolve
-zo "It was funky, and you went something like this with your face."
-scene epi_intro18 with dissolve
-$ renpy.pause()
-scene epi_intro13 with dissolve
-mc "I went like that?"
-scene epi_intro16 with dissolve
-zo "Yeah, like you always do when you play something tricky."
-scene epi_intro13 with dissolve
-mc "Well, I don't remember what song it was."
-scene epi_intro17 with dissolve
-zo "But-"
-scene epi_intro13 with dissolve
-mc "And don't say I do."
-scene epi_intro17b with dissolve
-zo "*{i}Mumbles{/i}* You do, though."
-scene epi_intro19 with dissolve
-zo "Whatever. Beer?"
-mc "Nah."
-scene epi_intro24 with dissolve
-zmom "No, I understand, but that doesn't explain-"
-scene epi_intro25 with dissolve
-zmom "Please, listen to me. She writes all of this down on a notepad on her walker."
-zmom "She has perfect control over her meds. If you look in that notepad, you'll-"
-scene epi_intro26 with dissolve
-zmom "You did? No, that can't be."
-zmom "Ok... I'll be there. No, it's fine. Yes, tomorrow."
-scene epi_intro27 with dissolve
-zmom "I'll have Bobby cover my shift."
-zmom "Tell her I'm coming when she wakes up, ok? Bye."
-scene epi_intro28 with dissolve
-zo "What's wrong with grandma?"
-scene epi_intro29 with dissolve
-zmom "Jesus. Zoey... You startled me."
-scene epi_intro32 with dissolve
-zo "What's wrong with her? Something happened, I can tell."
-scene epi_intro29 with dissolve
-zmom "Your grandma must have confused her medicine. Aunt Joline found her on the floor when she checked up on her."
+    $mod_choices = ["{size=44}(Zoey CHICK)","{size=44}(Zoey DIK)","","","","","","","","","","" ]  
+call screen zoey_choice_screen("Encourage-le \n[mod_gr][mod_choices[0]]",1000,100, "Quelle fillette ! \n[mod_gr][mod_choices[1]]",1250,550)  
+if tmp_choice == 1:  
+    $ zdik(-1)  
+    zo "Je sais que tu peux faire mieux ! Tu es plus rapide que ça !"  
+    scene epi_intro4 with dissolve  
+    mc "Tu veux que je donne tout ce que j'ai ?"  
+    scene epi_intro3 with dissolve  
+    zo "Carrément ! Plus vite !"  
+else:  
+    $ zdik(1)  
+    zo "Tu pédales comme une fille !"  
+    scene epi_intro4 with dissolve  
+    mc "Eh bien, c'est un vélo de fille. C'est peut-être pour ça ?"  
+    scene epi_intro3 with dissolve  
+    zo "Allez ! Plus vite !"  
+scene epi_intro5 with dissolve  
+$ renpy.music.stop(channel="sfx1", fadeout=3)  
+$ renpy.pause()  
+scene epi_intro6 with dissolve  
+$ renpy.pause()  
+scene epi_intro7 with dissolve  
+$ renpy.pause()  
+scene anim_zoey_room_epi with dissolve  
+pause  
+scene epi_intro8 with dissolve  
+$ renpy.pause()  
+scene epi_intro9 with dissolve  
+$ renpy.pause()  
+scene epi_intro10 with dissolve  
+zo "Pas celui-là. Joue celui d'hier."  
+scene epi_intro12 with dissolve  
+mc "Je ne me souviens pas exactement."  
+scene epi_intro11 with dissolve  
+zo "Si, tu t'en souviens."  
+scene epi_intro13 with dissolve  
+mc "Haha, encore ça, bordel. Tu vas arrêter de faire ça un jour ?"  
+scene epi_intro15 with dissolve  
+zo "Et alors ?"  
+scene epi_intro13 with dissolve  
+mc "Je ne me souviens pas de quelle chanson tu parles..."  
+mc "...et quand je dis que je ne sais pas ou que je ne me souviens pas, tu ne peux pas dire \"Si, tu sais\"."  
+mc "Parce que je ne sais pas !"  
+scene epi_intro16 with dissolve  
+zo "Ouais, mais si, tu sais."  
+scene epi_intro14 with dissolve  
+$ renpy.pause()  
+scene epi_intro16 with dissolve  
+zo "C'était funky, et tu as fait ça avec ton visage."  
+scene epi_intro18 with dissolve  
+$ renpy.pause()  
+scene epi_intro13 with dissolve  
+mc "J'ai fait ça ?"  
+scene epi_intro16 with dissolve  
+zo "Ouais, comme tu fais toujours quand tu joues quelque chose de compliqué."  
+scene epi_intro13 with dissolve  
+mc "Bon, je ne me souviens pas de la chanson."  
+scene epi_intro17 with dissolve  
+zo "Mais-"  
+scene epi_intro13 with dissolve  
+mc "Et ne dis pas que si."  
+scene epi_intro17b with dissolve  
+zo "*{i}Marmonne{/i}* Mais si, pourtant."  
+scene epi_intro19 with dissolve  
+zo "Peu importe. Une bière ?"  
+mc "Non."  
+scene epi_intro24 with dissolve  
+zmom "Non, je comprends, mais ça n'explique pas..."  
+scene epi_intro25 with dissolve  
+zmom "S'il vous plaît, écoutez-moi. Elle note tout sur un carnet attaché à son déambulateur."  
+zmom "Elle gère parfaitement ses médicaments. Si vous regardez dans ce carnet, vous verrez..."  
+scene epi_intro26 with dissolve  
+zmom "Vous l'avez fait ? Non, ce n'est pas possible."  
+zmom "Ok... J'arrive. Non, ce n'est rien. Oui, demain."  
+scene epi_intro27 with dissolve  
+zmom "Je vais demander à Bobby de prendre mon service."  
+zmom "Dites-lui que je viens quand elle se réveillera, d'accord ? Au revoir."  
+scene epi_intro28 with dissolve  
+zo "Qu'est-ce qui arrive à mamie ?"  
+scene epi_intro29 with dissolve  
+zmom "Jésus. Zoey... Tu m'as fait peur."  
+scene epi_intro32 with dissolve  
+zo "Qu'est-ce qu'elle a ? Il s'est passé quelque chose, je le vois bien."  
+scene epi_intro29 with dissolve  
+zmom "Ta grand-mère a dû se tromper dans ses médicaments. Tante Joline l'a trouvée par terre en venant la voir."  
 if persistent.mod_wt_enabled:  
-    $mod_choices = ["\n(Zoey CHICK)","\n(Zoey DIK)","","","","","","","","","","" ]
-call screen zoey_choice_screen("Is she all right? [mod_gr][mod_choices[0]]",820,380, "What the fuck!? [mod_gr][mod_choices[1]]",750,100)
-if tmp_choice == 1:
-    $ zdik(-1)
-    scene epi_intro32 with dissolve
-    zo "Is she all right?"
-    scene epi_intro30 with dissolve
-    zmom "She's unconscious, but she's in good hands."
-else:
-    $ zdik(1)
-    scene epi_intro32 with dissolve
-    zo "No fucking way! What the hell happened?"
-    scene epi_intro30 with dissolve
-    zmom "They don't know yet."
-zmom "She's in the hospital at the moment. They are doing some kind of tox screening to find out what she ate."
-zmom "I'm going there tomorrow; I'll be taking a day off from work."
-scene epi_intro33 with dissolve
-zo "I'm going, too."
-scene epi_intro31 with dissolve
-zmom "No, you're not. You have school tomorrow morning."
-scene epi_intro33 with dissolve
+    $mod_choices = ["\n(Zoey CHICK)","\n(Zoey DIK)","","","","","","","","","","" ]  
+call screen zoey_choice_screen("Elle va bien ? [mod_gr][mod_choices[0]]",820,380, "Putain, c'est quoi ce bordel !? [mod_gr][mod_choices[1]]",750,100)  
+if tmp_choice == 1:  
+    $ zdik(-1)  
+    scene epi_intro32 with dissolve  
+    zo "Elle va bien ?"  
+    scene epi_intro30 with dissolve  
+    zmom "Elle est inconsciente, mais elle est entre de bonnes mains."  
+else:  
+    $ zdik(1)  
+    scene epi_intro32 with dissolve  
+    zo "Putain, c'est pas vrai ! Qu'est-ce qui s'est passé ?"  
+    scene epi_intro30 with dissolve  
+    zmom "Ils ne savent pas encore."  
+zmom "Elle est à l'hôpital en ce moment. Ils font une analyse toxicologique pour voir ce qu'elle a ingéré."  
+zmom "J'y vais demain, je vais prendre un jour de congé."  
+scene epi_intro33 with dissolve  
+zo "J'y vais aussi."  
+scene epi_intro31 with dissolve  
+zmom "Non, tu n'y vas pas. Tu as école demain matin."  
+scene epi_intro33 with dissolve  
+if persistent.mod_wt_enabled:  
+    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]  
+call screen zoey_choice_screen("{size=-5}Nana est plus importante !{/size}[mod_gr][mod_choices[0]]",500,100, "J'en ai rien à foutre de l'école ![mod_gr][mod_choices[1]]",550,370)  
+if tmp_choice == 1:  
+    $ zdik(-1)  
+    zo "Allez, Maman ! C'est bien plus important que la trigonométrie !"  
+    scene epi_intro31 with dissolve  
+    zmom "Ce n'est pas négociable. Et tout ira bien."  
+else:  
+    $ zdik(1)  
+    zo "J'en ai rien à foutre de l'école ! C'est juste un putain de cours."  
+    scene epi_intro31 with dissolve  
+    zmom "Fais attention à ton langage, Zoey..."  
+scene epi_intro34 with dissolve  
+zmom "C'est ma bière ?"  
+scene epi_intro35 with dissolve  
+zmom "Combien de fois je t'ai dit ?"  
+zmom "Pas d'alcool dans cette maison avant tes 21 ans."  
+scene epi_intro36 with dissolve  
+if persistent.mod_wt_enabled:  
+    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]  
+call screen zoey_choice_screen("Répliquer[mod_gr][mod_choices[1]]",920,100, "S'excuser[mod_gr][mod_choices[0]]",890,350)  
+if tmp_choice == 1:  
+    $ zdik(1)  
+    zo "Tu rêves si tu crois que je serai encore là à 21 ans."  
+    scene epi_intro35 with dissolve  
+    zmom "Obtiens ton diplôme, et après tu pourras boire."  
+    scene epi_intro36 with dissolve  
+else:  
+    $ zdik(-1)  
+    zo "21 ans ? Sérieusement ?"  
+    scene epi_intro35 with dissolve  
+    zmom "Obtiens ton diplôme, et après tu pourras boire."  
+    scene epi_intro36 with dissolve  
+    zo "D'accord, désolée."  
+zo "Maman, écoute. Oublie la bière. Et mamie alors ?"  
+scene epi_intro37 with dissolve  
+zmom "L'école passe en premier. Je lui dirai que tu lui dis bonjour."  
+scene epi_intro38 with dissolve  
+zo "Pas juste \"bonjour\"..."  
+scene epi_intro39 with dissolve  
+zo "..."  
+stop music fadeout 3  
+scene epi_intro38 with dissolve  
+zo "Dis-lui que je lui dis \"Je t'aime\"."  
+scene epi_intro40 with dissolve  
+$ renpy.pause()  
+play music "music/ep_interlude/licensed_music/track94.mp3"  
+scene epi_intro20 with dissolve  
+$ renpy.pause()  
+scene epi_intro22 with dissolve  
+mc "Qu'est-ce qui ne va pas ?"  
+scene epi_intro21 with dissolve  
+if persistent.mod_wt_enabled:  
+    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]  
+call screen zoey_choice_screen("Ça ne te regarde pas[mod_gr][mod_choices[1]]",450,100, "Rien[mod_gr][mod_choices[0]]",1350,100)  
+if tmp_choice == 1:  
+    $ zdik(1)  
+    zo "Ça ne te regarde pas."  
+    scene epi_intro22 with dissolve  
+    mc "Ok, euh..."  
+else:  
+    $ zdik(-1)  
+    zo "Rien."  
+    scene epi_intro22 with dissolve  
+mc "C'était cette chanson ?"  
+scene epi_intro23 with dissolve  
+zo "Ouais. Tu vois... ?"  
+zo "Tu savais en fait."  
+scene epi_intro23a with dissolve  
+$ renpy.pause(10)  
+show text "Cliquez pour continuer" with dissolve:  
+    xpos 0.5  
+    ypos 0.9  
+$ renpy.pause(2)  
+hide text "Cliquez pour continuer" with dissolve  
+$ renpy.pause()  
 
-if persistent.mod_wt_enabled:  
-    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]
-#[mod_gr][mod_choices[0]]
-call screen zoey_choice_screen("{size=-5}Nana is important!{/size}[mod_gr][mod_choices[0]]",500,100, "Fuck school![mod_gr][mod_choices[1]]",550,370)
-if tmp_choice == 1:
-    $ zdik(-1)
-    zo "Come on, Mom! This is way more important than trigonometry!"
-    scene epi_intro31 with dissolve
-    zmom "This isn't negotiable. And everything will be fine."
-else:
-    $ zdik(1)
-    zo "Fuck school! It's one fucking class."
-    scene epi_intro31 with dissolve
-    zmom "Language, Zoey..."
-scene epi_intro34 with dissolve
-zmom "Is that my beer?"
-scene epi_intro35 with dissolve
-zmom "How many times have I told you now?"
-zmom "No alcohol in this house until you're 21."
-scene epi_intro36 with dissolve
-if persistent.mod_wt_enabled:  
-    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]
-    #[mod_gr][mod_choices[0]]
-call screen zoey_choice_screen("Talk back[mod_gr][mod_choices[1]]",920,100, "Apologize[mod_gr][mod_choices[0]]",890,350)
-if tmp_choice == 1:
-    $ zdik(1)
-    zo "You got some high hopes thinking I'll be here when I'm 21."
-    scene epi_intro35 with dissolve
-    zmom "Graduate, and then you can drink."
-    scene epi_intro36 with dissolve
-else:
-    $ zdik(-1)
-    zo "21? Really?"
-    scene epi_intro35 with dissolve
-    zmom "Graduate, and then you can drink."
-    scene epi_intro36 with dissolve
-    zo "All right, I'm sorry."
-zo "Mom, listen. Fuck the beer. What about grandma?"
-scene epi_intro37 with dissolve
-zmom "School comes first. I'll tell her you said hi."
-scene epi_intro38 with dissolve
-zo "Not \"hi\"..."
-scene epi_intro39 with dissolve
-zo "..."
-stop music fadeout 3
-scene epi_intro38 with dissolve
-zo "Tell her I said, \"Love ya\"."
-scene epi_intro40 with dissolve
-$ renpy.pause()
-play music "music/ep_interlude/licensed_music/track94.mp3"
-scene epi_intro20 with dissolve
-$ renpy.pause()
-scene epi_intro22 with dissolve
-mc "What's wrong?"
-scene epi_intro21 with dissolve
-if persistent.mod_wt_enabled:  
-    $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]
-    #[mod_gr][mod_choices[0]]
-call screen zoey_choice_screen("Not your business[mod_gr][mod_choices[1]]",450,100, "Nothing[mod_gr][mod_choices[0]]",1350,100)
-if tmp_choice == 1:
-    $ zdik(1)
-    zo "It's none of your business."
-    scene epi_intro22 with dissolve
-    mc "Ok, uh..."
-else:
-    $ zdik(-1)
-    zo "Nothing."
-    scene epi_intro22 with dissolve
-mc "Was it this song?"
-scene epi_intro23 with dissolve
-zo "Yeah. See...?"
-zo "You did know."
-scene epi_intro23a with dissolve
-$ renpy.pause(10)
-show text "Click to continue" with dissolve:
-    xpos 0.5
-    ypos 0.9
-$ renpy.pause(2)
-hide text "Click to continue" with dissolve
-$ renpy.pause()
 
-scene 2d_jacob_screen_main with dissolve
-show screen episode_title_screen
-$ renpy.pause(5)
-
-label epi_zoey_pre_lewd_label:
-scene epi_zoey_lewd1 with dissolve
-$ renpy.pause()
 scene epi_zoey_lewd2 with dissolve
-zo "You're good at math, right?"
+zo "Tu es bon en maths, non ?"
 scene epi_zoey_lewd6 with dissolve
-mc "I'm decent."
+mc "Je me débrouille."
 scene epi_zoey_lewd2 with dissolve
-zo "Trigonometry? You know it?"
+zo "La trigonométrie ? Tu connais ?"
 scene epi_zoey_lewd6 with dissolve
-mc "In spring, I will. Is that the class you failed?"
+mc "Au printemps, oui. C’est le cours que tu as raté ?"
 scene epi_zoey_lewd3 with dissolve
-zo "Yeah... My stumble on the finish line."
+zo "Ouais... Mon échec juste avant la ligne d’arrivée."
 scene epi_zoey_lewd7 with dissolve
-mc "You'll make it sometime. You're not in a rush anywhere, are you?"
+mc "Tu y arriveras un jour. Tu n’es pas pressée, si ?"
 scene epi_zoey_lewd4 with dissolve
-zo "If I were... Would you come with me?"
+zo "Et si je l'étais... Tu viendrais avec moi ?"
 scene epi_zoey_lewd7 with dissolve
-mc "Where are we going?"
+mc "Où est-ce qu'on irait ?"
 scene epi_zoey_lewd4 with dissolve
-zo "I don't know. Somewhere hot, maybe? Miami?"
+zo "Je sais pas. Quelque part où il fait chaud, peut-être ? Miami ?"
 scene epi_zoey_lewd7 with dissolve
-mc "What's in Miami?"
+mc "Qu'est-ce qu'il y a à Miami ?"
 scene epi_zoey_lewd5 with dissolve
-zo "Beaches and parties, duh."
+zo "Des plages et des fêtes, évidemment."
 scene epi_zoey_lewd6 with dissolve
-mc "Sounds fun. I'm in."
+mc "Ça a l'air cool. Je suis partant."
 scene epi_zoey_lewd5 with dissolve
-zo "You're not in."
+zo "Tu n'es pas partant."
 scene epi_zoey_lewd7 with dissolve
-mc "I am."
+mc "Si, je le suis."
 scene epi_zoey_lewd4 with dissolve
-zo "What about college?"
+zo "Et les études ?"
 scene epi_zoey_lewd7 with dissolve
-mc "Yeah, but don't they have that there?"
+mc "Ouais, mais il y a pas des facs là-bas aussi ?"
 scene epi_zoey_lewd4 with dissolve
-zo "Yeah, probably."
-zo "Can we eat at your place tonight?"
+zo "Ouais, sûrement."
+zo "On peut manger chez toi ce soir ?"
 scene epi_zoey_lewd6 with dissolve
-mc "Didn't your mom come home yet?"
+mc "Ta mère n'est pas encore rentrée ?"
 scene epi_zoey_lewd8 with dissolve
-zo "She said she was gonna be gone for a day, but who knows?"
-zo "She's prolly only making sure grandma's ok."
+zo "Elle a dit qu'elle serait partie une journée, mais qui sait ?"
+zo "Elle vérifie sûrement juste si mamie va bien."
 scene epi_zoey_lewd6 with dissolve
-mc "And your dad?"
+mc "Et ton père ?"
 scene epi_zoey_lewd9 with dissolve
-zo "Stepdad, dude. I hate when you call him dad."
+zo "Beau-père, mec. Je déteste quand tu l'appelles papa."
 scene epi_zoey_lewd7 with dissolve
-mc "It's easier to say."
+mc "C'est plus facile à dire."
 scene epi_zoey_lewd9 with dissolve
-zo "Call him Floyd, then."
-zo "He's hauling cargo somewhere. Who cares where he is?"
+zo "Appelle-le Floyd, alors."
+zo "Il transporte des marchandises quelque part. Peu importe où."
 scene epi_zoey_lewd7 with dissolve
-mc "Anyway... We can eat at my place tonight. I'll let dad know."
+mc "Bref... On peut manger chez moi ce soir. Je préviens mon père."
+
 label epi_zoey_lewd_label:
 if _in_replay:
     if persistent.name == None:
@@ -278,36 +269,38 @@ if _in_replay:
         $ name = persistent.name
     $ affinity = "NEUTRAL"
     play music "music/ep_interlude/licensed_music/track94.mp3"
+
 scene epi_zoey_lewd4 with dissolve
-zo "Do that later. We got the house to ourselves for once. Wanna go crazy?"
+zo "Fais ça plus tard. On a la maison pour nous seuls, pour une fois. Tu veux faire un truc fou ?"
 scene epi_zoey_lewd7 with dissolve
-mc "Crazy how?"
+mc "Fou comment ?"
 scene epi_zoey_lewd4 with dissolve
-zo "Off the top of my head, I'm thinking we put some ShitFaced on and dilute another one of Mom's bottles."
+zo "Comme ça, à chaud, je pense qu'on pourrait mettre un peu de ShitFaced et diluer une autre bouteille de ma mère."
 scene epi_zoey_lewd7 with dissolve
-mc "I don't think it would be a great idea to show up to dinner drunk. Dad would probably tell Alison we'd been drinking."
+mc "Je pense pas que ce soit une bonne idée d'arriver bourrés au dîner. Mon père dirait sûrement à Alison qu'on a bu."
 scene epi_zoey_lewd10 with dissolve
 if persistent.mod_wt_enabled:  
     $mod_choices = ["\n{size=44}(Zoey CHICK)","\n{size=44}(Zoey DIK)","","","","","","","","","","" ]
     #[mod_gr][mod_choices[0]]
-call screen zoey_choice_screen("What a snitch[mod_gr][mod_choices[1]]",1450,350, "You're right[mod_gr][mod_choices[0]]",1400,100)
+call screen zoey_choice_screen("Quel rapporteur[mod_gr][mod_choices[1]]",1450,350, "Tu as raison[mod_gr][mod_choices[0]]",1400,100)
 if tmp_choice == 1:
     $ zdik(1)
-    zo "Neil's such a snitch."
+    zo "Neil est un vrai rapporteur."
     if affinity == "DIK":
         scene epi_zoey_lewd7 with dissolve
-        mc "Fuck you."
+        mc "Va te faire foutre."
         scene epi_zoey_lewd4 with dissolve
-        zo "Hey, mellow. He's the best; I was joking."
+        zo "Hé, calme-toi. C'est le meilleur, je plaisantais."
     else:
         scene epi_zoey_lewd6 with dissolve
-        mc "Name a parent who isn't."
+        mc "Trouve-moi un parent qui ne l'est pas."
         scene epi_zoey_lewd4 with dissolve
-        zo "I wouldn't be. I'd let my kid do whatever they wanted."
+        zo "Moi, je le serais pas. Je laisserais mon gosse faire ce qu'il veut."
         scene epi_zoey_lewd6 with dissolve
-        mc "That doesn't sound completely right."
+        mc "Ça me semble pas super correct."
         scene epi_zoey_lewd4 with dissolve
-        zo "Whatever..."
+        zo "Peu importe..."
+
 else:
     $ zdik(-1)
     zo "You're probably right about that."
